@@ -152,7 +152,7 @@ body .rail .contents .chapter-subnav{display:grid;gap:2px;margin:0 0 8px 22px;pa
 <style>.showcase-return{display:block;margin:0 0 10px;font-size:12px;color:var(--muted);text-decoration:none}.showcase-return:hover{text-decoration:underline}</style>
 </head>
 <body><aside class="rail" aria-label="文档目录"><div class="brand"><span class="brandmark" aria-hidden="true">读</span><span><strong>此刻读什么</strong></span></div><p class="rail-title">开发说明 · 三份材料</p><a class="showcase-return" href="index.html">← 产品介绍</a>
-<nav class="doc-nav" aria-label="文档导航"><a href="01_产品设计方案.html" class="active" aria-current="page"><span>一</span>产品设计思路</a><a href="02_技术选型说明_决策版.html"><span>二</span>技术方案</a><a href="03_AI使用说明.html"><span>三</span>AI 使用说明</a></nav><nav class="contents nav" aria-label="本篇目录"><a href="#scope"><span>01</span><span class="nav-label">需求与范围</span></a><a href="#experience"><span>02</span><span class="nav-label">v1.0 · 功能与体验</span></a><a href="#implementation"><span>03</span><span class="nav-label">v1.0 · 实现思路</span></a><a href="#v11"><span>04</span><span class="nav-label">v1.1 · 找书体验完善</span></a><a href="#v12"><span>05</span><span class="nav-label">v1.2 · 参考信息与反馈</span></a><a href="#delivery"><span>06</span><span class="nav-label">产品质量与验证</span></a></nav><div class="rail-bottom"><div class="progress"><i id="reading-progress"></i></div><p>2026.09.10<br>产品版本 v1.0—v1.2</p></div></aside><main><div class="wrap"><div class="topline" style="justify-content:flex-end"><span>产品演进 v1.0—v1.2</span></div><header class="hero" id="overview"><p class="eyebrow">此刻读什么</p><h1>产品设计思路</h1><p class="lead">一款对话式非虚构选书工具：说出想解决的问题或想了解的领域，获得一本首选和最多两本备选，了解各自适合之处；不合适时，可继续补充要求、调整推荐。</p><div class="document-map"><a href="#scope"><b>01</b><strong>需求与范围</strong></a><a href="#experience"><b>02</b><strong>v1.0 · 功能与体验</strong></a><a href="#implementation"><b>03</b><strong>v1.0 · 实现思路</strong></a><a href="#v11"><b>04</b><strong>v1.1 · 找书体验完善</strong></a><a href="#v12"><b>05</b><strong>v1.2 · 参考信息与反馈</strong></a><a href="#delivery"><b>06</b><strong>产品质量与验证</strong></a></div></header><p class="baseline-note">阅读说明：各版本的功能与交互按当时的设计呈现，后续改动在对应迭代章节中说明。</p><section id="scope"><div class="section-head"><span class="section-no">01</span><div><h2>需求与范围</h2></div></div>
+<nav class="doc-nav" aria-label="文档导航"><a href="01_产品设计方案.html" class="active" aria-current="page"><span>一</span>产品设计思路</a><a href="02_技术选型说明_决策版.html"><span>二</span>技术方案</a><a href="03_AI使用说明.html"><span>三</span>AI 使用说明</a></nav><nav class="contents nav" aria-label="本篇目录"><a href="#scope"><span>01</span><span class="nav-label">需求与范围</span></a><a href="#experience"><span>02</span><span class="nav-label">v1.0 · 功能与体验</span></a><a href="#implementation"><span>03</span><span class="nav-label">v1.0 · 实现思路</span></a><a href="#v11"><span>04</span><span class="nav-label">v1.1 · 找书体验完善</span></a><a href="#v12"><span>05</span><span class="nav-label">v1.2 · 参考信息与反馈</span></a><a href="#delivery"><span>06</span><span class="nav-label">产品质量与验证</span></a><a href="#roadmap"><span>07</span><span class="nav-label">v2.0 · 后续更新计划</span></a></nav><div class="rail-bottom"><div class="progress"><i id="reading-progress"></i></div><p>2026.09.10<br>产品版本 v1.0—v1.2</p></div></aside><main><div class="wrap"><div class="topline" style="justify-content:flex-end"><span>产品演进 v1.0—v1.2</span></div><header class="hero" id="overview"><p class="eyebrow">此刻读什么</p><h1>产品设计思路</h1><p class="lead">一款对话式非虚构选书工具：说出想解决的问题或想了解的领域，获得一本首选和最多两本备选，了解各自适合之处；不合适时，可继续补充要求、调整推荐。</p><div class="document-map"><a href="#scope"><b>01</b><strong>需求与范围</strong></a><a href="#experience"><b>02</b><strong>v1.0 · 功能与体验</strong></a><a href="#implementation"><b>03</b><strong>v1.0 · 实现思路</strong></a><a href="#v11"><b>04</b><strong>v1.1 · 找书体验完善</strong></a><a href="#v12"><b>05</b><strong>v1.2 · 参考信息与反馈</strong></a><a href="#delivery"><b>06</b><strong>产品质量与验证</strong></a><a href="#roadmap"><b>07</b><strong>v2.0 · 后续更新计划</strong></a></div></header><p class="baseline-note">阅读说明：各版本的功能与交互按当时的设计呈现，后续改动在对应迭代章节中说明。</p><section id="scope"><div class="section-head"><span class="section-no">01</span><div><h2>需求与范围</h2></div></div>
 <p class="baseline-note">以下“本期”均指 v1.0。需求卡点与范围推导是初期产品假设和设计判断，尚不等同于经用户调研证实的结论。</p>
 <div class="part-head" id="need-origin"><span>1.1</span><div><h3>需求出发点</h3></div></div>
 <p>随着信息获取成本降低，用户更容易接触大量书籍与推荐内容。选书时需要解决的核心问题，是<strong>哪些内容适合当前目标、知识基础与使用场景，以及应该先读哪一本。</strong></p>
@@ -350,16 +350,30 @@ body .rail .contents .chapter-subnav{display:grid;gap:2px;margin:0 0 8px 22px;pa
 <div class="part-head"><span>3.3</span><div><h3>资料支撑：书库如何支持可靠推荐</h3></div></div>
 <div class="book-data-design">
 <p>书库既要确认<strong>“这是哪本书”</strong>，也要提供<strong>“为什么值得推荐”</strong>的依据。先整理和核对资料，再让它参与在线推荐。</p>
-<h4 class="design-subtitle">资料分工：每类信息解决一个问题</h4>
+<div id="book-selection-strategy" style="scroll-margin-top:32px">
+<h4 class="design-subtitle">3.3.1 选书策略：先建立基础覆盖，再根据需求补充</h4>
+<p><strong>围绕阅读任务选书，兼顾入门、实践与进阶；先建立基础覆盖，再根据试用缺口补充。</strong></p>
+<div class="table-scroll design-matrix"><table><thead><tr><th>阶段</th><th>选书重点</th></tr></thead><tbody>
+<tr><td><strong>首批试点 · 10 本</strong></td><td>职场管理与沟通、社会理解与中国经济各 5 本，先验证资料核对和推荐流程。</td></tr>
+<tr><td><strong>基础覆盖 · 扩至 264 本</strong></td><td>覆盖工作、技术、设计、人文、科学、心理、生活与行业实践 8 大类、55 个方向；每方向先列 5 本候选，兼顾不同深度并去重，以中文简体版为主。</td></tr>
+<tr><td><strong>AI 专项补充 · 新增 12 本</strong></td><td>针对较新大模型书籍的缺口，补充原理、从零构建、应用工程、RAG／搜索、智能体和部署实践，兼顾时效性、著作地位与实操价值。书库增至 276 本。</td></tr>
+</tbody></table></div>
+<ul>
+<li><strong>看质量，也看用途：</strong>评分与评价人数用于初筛，经典、专业著作及新书结合课程、机构和出版依据判断；入选后仍需核对版本与内容。</li>
+<li><strong>AI 书籍兼顾基础与实践：</strong>如《从零构建大模型》侧重动手实现，《AI工程：大模型应用开发实战》侧重应用开发。该批 5 本中文、7 本英文资料中含 1 本在线草稿，明确标注语言与版本，未核实评分留空。</li>
+<li><strong>根据缺口补书：</strong>先区分确实缺书、检索漏项和资料不足，再决定补充或修正。书多不等于覆盖充分，入库也不等于适合每位用户。</li>
+</ul>
+</div>
+<h4 class="design-subtitle">3.3.2 资料分工：每类信息解决一个问题</h4>
 <div class="table-scroll design-matrix"><table><thead><tr><th>资料类型</th><th>主要内容</th><th>产品用途</th></tr></thead><tbody>
 <tr><td>书籍身份</td><td>书名、作者、来源与版本对应关系</td><td>避免同名书、不同版本混用，保证推荐对象可核对。</td></tr>
 <tr><td>内容依据</td><td>简介、目录与可定位的原文片段</td><td>支持主题检索、适配比较和推荐理由核对。</td></tr>
 <tr><td>展示信息</td><td>封面与来源入口</td><td>帮助用户辨认书籍、查看原始资料。</td></tr>
 <tr><td>检索与维护信息</td><td>书籍向量、准入状态与缺项记录</td><td>决定哪些书能进入候选，帮助管理者定位待补资料。</td></tr>
 </tbody></table></div>
-<h4 class="design-subtitle">准备流程：从收集到持续复核</h4>
+<h4 class="design-subtitle">3.3.3 准备流程：从收集到持续复核</h4>
 <ol class="data-preparation"><li><span>01</span><div><h5>收集</h5><p>整理书目、简介、目录和来源。</p><small>产出：待核对资料</small></div></li><li><span>02</span><div><h5>核对</h5><p>确认身份与版本对应，保留来源，标记缺项与冲突。</p><small>产出：核对结果与待补项</small></div></li><li><span>03</span><div><h5>准入</h5><p>资料可支持比较、检索资料有效后，进入可推荐范围。</p><small>产出：可参与检索的书目</small></div></li><li><span>04</span><div><h5>复核</h5><p>结合具体推荐与反馈，回查资料并修正，再用原案例验证。</p><small>产出：资料或推荐的改进</small></div></li></ol>
-<h4 class="design-subtitle">遇到资料问题时，如何处理？</h4>
+<h4 class="design-subtitle">3.3.4 遇到资料问题时，如何处理？</h4>
 <div class="table-scroll design-matrix"><table><thead><tr><th>情况</th><th>处理原则</th></tr></thead><tbody>
 <tr><td>字段缺失</td><td><strong>保留为空并记录缺项</strong>，不让模型把猜测补成事实。</td></tr>
 <tr><td>身份、版本或来源存在冲突</td><td>先核对对应关系，未确认的资料不作为推荐依据。</td></tr>
@@ -437,6 +451,29 @@ body .rail .contents .chapter-subnav{display:grid;gap:2px;margin:0 0 8px 22px;pa
 <tr><td><strong>优先修关键问题</strong></td><td>先处理无法使用、事实错误和违反明确要求的问题，再按重复频率、影响范围和修改成本安排体验优化。</td></tr>
 <tr><td><strong>原案例与相关案例复测</strong></td><td>用相同需求确认问题是否改善，再检查相关场景是否受影响；保留修改前后结果，写清已解决与仍待验证项。</td></tr>
 </tbody></table></div>
+</section><section id="roadmap">
+<div class="section-head"><span class="section-no">07</span><div><h2>v2.0 · 后续更新计划</h2><p>先改善访问与展示，再补充书库覆盖，最后小规模探索虚构选书。以下为计划，尚未完成。</p></div></div>
+<div class="part-head"><span>7.1</span><div><h3>现版本问题：优先保障正常使用</h3></div></div>
+<div class="table-scroll design-matrix"><table style="table-layout:fixed;width:100%"><colgroup><col style="width:50%"><col style="width:50%"></colgroup><thead><tr><th>问题与现状</th><th>后续安排</th></tr></thead><tbody>
+<tr><td><strong>非 VPN 状态下加载偶有不稳定</strong><br>原因尚未查明，目前未再出现，暂不视为已修复。</td><td>保留网络与加载失败记录；后续计划完成备案、部署大陆服务器，改善直连访问，并在手机流量和不同宽带下复测。</td></tr>
+<tr><td><strong>手机端部分书籍封面不加载</strong><br>已定位原因，受本阶段时间限制暂未修复。</td><td>按已定位原因修复封面加载，验证手机端的首次访问、刷新和失败占位，确保书籍仍可辨认。</td></tr>
+</tbody></table></div>
+<div class="part-head"><span>7.2</span><div><h3>非虚构书库：补具体需求与新视角</h3></div></div>
+<p>目前仅有少量试用，反馈不足以判断需求频率。已参考西西弗、茑屋的公开荐书与活动，并对照现有 276 本书形成初步候选计划；<strong>书店选题提供线索，补书优先级仍看可能的阅读需求与现有覆盖。</strong></p>
+<ul>
+<li><strong>优先补六类需求：</strong>普通人的 AI 判断、工作任务自动化、低精力生活、家庭照护、中国经济与治理进阶，以及性别与日常制度。每类先找 2 本互补候选。</li>
+<li><strong>少量拓宽四类场景：</strong>平台劳动、工作意义、身边自然、粉丝文化，每类先找 1 本；首轮约 16 本候选，避免同类堆积。</li>
+<li><strong>选书范例：</strong>《Python编程快速上手——让繁琐工作自动化》承接具体工作任务，《关于偶像，一边纠结一边思考》补充小众文化视角。均需进一步核对版本、目录与适用边界。</li>
+<li><strong>入库前确认：</strong>接住什么需求、现有书为何不足、新意在哪里、什么情况下不适合推荐。区分新出版、新案例与新观点；补完用对应需求复测。</li>
+</ul>
+<div class="part-head"><span>7.3</span><div><h3>虚构书籍：复用主流程，小规模试点</h3></div></div>
+<p>拟在现有链路前增加<strong>虚构／非虚构需求分流</strong>，复用书库检索、首选与备选、书卡、已读排除和反馈调整；主要新增虚构书的资料字段与比较规则，控制改动范围。</p>
+<ul>
+<li><strong>理解想要的阅读体验：</strong>围绕题材、氛围、节奏、篇幅和已读偏好提问；不明确时只补问关键条件。</li>
+<li><strong>按体验比较：</strong>补充题材、叙事风格、阅读难度及内容提示，结合可核实简介与书评形成依据；推荐理由避免剧透，不沿用非虚构的重点章节建议。</li>
+<li><strong>初步选书：</strong>先在现实与人物、悬疑推理、科幻想象、短篇轻阅读四个方向各筛选 2—3 本，约 8—12 本；兼顾经典与近年作品、不同篇幅和阅读门槛，不追求一次覆盖所有类型。</li>
+<li><strong>小规模验证后再扩充：</strong>用“想读短篇”“不要沉重结局”“喜欢某本但想换一种风格”等场景检查适配与排除规则，再决定是否正式开放。</li>
+</ul>
 </section><footer><span>此刻读什么 · 产品设计思路<br>2026.09.10</span><span><a href="02_技术选型说明_决策版.html">02 技术方案</a> · <a href="03_AI使用说明.html">03 AI 使用说明</a></span></footer></div></main><script>
 
 
@@ -465,7 +502,7 @@ let beforePrintDetails=[];addEventListener('beforeprint',()=>{beforePrintDetails
 
 document.getElementById('experience-survey-preview').addEventListener('submit',event=>{event.preventDefault();document.getElementById('survey-preview-status').textContent='演示结束：答案未上传或保存。';});
 const contents = document.querySelector('.contents');
-const sections = ['scope','experience','implementation','v11','v12','delivery'].map(id=>document.getElementById(id));
+const sections = ['scope','experience','implementation','v11','v12','delivery','roadmap'].map(id=>document.getElementById(id));
 const links = [...contents.children].filter(node=>node.matches('a'));
 const chapterMenus = sections.map((section,index)=>{
   const menu=document.createElement('div');
