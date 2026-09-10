@@ -1,0 +1,29 @@
+/* Shared sidebar geometry for all delivery documents. */
+html{scrollbar-gutter:stable}
+body aside.rail{box-sizing:border-box;position:fixed;inset:0 auto 0 0;width:268px;height:100vh;padding:28px 24px 24px;border-right:1px solid var(--tone-d9dfd4, #d9dfd4);border-bottom:0;background:var(--tone-f5f3ec, #f5f3ec);display:flex;flex-direction:column;overflow-y:auto;z-index:10;color:var(--tone-173f37, #173f37);font:15px/1.85 -apple-system,BlinkMacSystemFont,"PingFang SC","Microsoft YaHei",sans-serif}
+body .rail .brand{display:flex;align-items:center;gap:12px;min-height:48px;flex-shrink:0;line-height:1.4;color:var(--tone-173f37, #173f37);text-decoration:none}
+body .rail .brandmark{box-sizing:border-box;display:grid;place-items:center;flex:0 0 43px;width:43px;height:48px;border:1px solid var(--tone-2b6654, #2b6654);font:28px/1.4 serif;padding:0}
+body .rail .brand strong{display:block;font-size:16px;font-weight:650;line-height:1.4}
+body .rail .brand small{display:block;font-size:10px;line-height:1.4;letter-spacing:.12em;color:var(--tone-69736b, #69736b);margin:5px 0 0}
+body .rail .rail-title{display:block;margin:25px 0 10px;padding:0;font-size:10px;line-height:1.85;letter-spacing:.13em;color:var(--tone-69736b, #69736b)}
+body .rail .doc-nav{display:grid;gap:4px;margin:0;padding:0;flex-shrink:0}
+body .rail .doc-nav a{display:flex;align-items:baseline;gap:12px;box-sizing:border-box;padding:10px 12px;margin:0 -8px;border-radius:5px;font-size:14px;line-height:1.85;font-weight:400;color:var(--tone-173f37, #173f37);text-decoration:none}
+body .rail .doc-nav a>span{font:italic 16px/1.4 Georgia,serif;color:var(--tone-69736b, #69736b)}
+body .rail .doc-nav a.active{background:var(--tone-e8eee3, #e8eee3);font-weight:650}
+body .rail .doc-nav a:hover{background:var(--tone-e8eee3, #e8eee3)}
+body .rail .contents{display:grid;gap:3px;flex-shrink:0;overflow:visible;margin:24px 0 0;padding:16px 0 0;border-top:1px solid var(--tone-d9dfd4, #d9dfd4)}
+body .rail .contents a{display:flex;align-items:baseline;gap:8px;margin:0;padding:7px 5px;font-size:12px;line-height:1.85;font-weight:400;border-radius:3px;text-decoration:none;color:var(--tone-69736b, #69736b)}
+body .rail .contents a>span:first-child{font-size:11px;line-height:1.85;opacity:.7;flex:0 0 18px}
+body .rail .contents a .nav-label{font:inherit;opacity:1}
+body .rail .contents a:hover,body .rail .contents a.active,body .rail .contents a[aria-current=location]{background:var(--tone-e8eee3, #e8eee3);color:var(--tone-173f37, #173f37)}
+body .rail .rail-bottom{margin-top:auto;padding-top:24px;flex-shrink:0;font-size:11px;line-height:1.85;color:var(--tone-69736b, #69736b)}
+body .rail .rail-bottom button{display:block;box-sizing:border-box;width:100%;margin:0 0 15px;padding:7px 14px;border:1px solid var(--tone-d9dfd4, #d9dfd4);border-radius:4px;background:transparent;font:12px/1.85 -apple-system,BlinkMacSystemFont,"PingFang SC","Microsoft YaHei",sans-serif;color:var(--tone-173f37, #173f37)}
+body .rail .rail-bottom p,body .rail .rail-bottom div{margin:0;font-size:11px;line-height:1.85}
+body .rail .progress{display:none}
+body>main,body>main.main{margin-left:268px}
+@media(max-width:1100px) and (min-width:761px){body aside.rail{width:235px;padding:24px 19px}body>main,body>main.main{margin-left:235px}}
+@media(max-width:760px){body aside.rail{position:relative;inset:auto;width:100%;height:auto;padding:18px 20px;border-right:0;border-bottom:1px solid var(--tone-d9dfd4, #d9dfd4);overflow:visible}body .rail .brand{min-height:37px}body .rail .brandmark{flex-basis:32px;width:32px;height:37px;font-size:22px}body .rail .brand small,body .rail .rail-title,body .rail .rail-bottom{display:none}body .rail .doc-nav{display:flex;flex-wrap:wrap;gap:4px;margin-top:15px}body .rail .doc-nav a{font-size:12px;padding:7px;margin:0;gap:6px}body .rail .doc-nav a>span{font-size:12px}body .rail .contents{display:flex;gap:3px;overflow-x:auto;margin-top:14px;padding-top:12px}body .rail .contents a{font-size:11px;white-space:nowrap;flex-shrink:0;padding:7px 5px}body .rail .contents a>span:first-child{display:none}body .rail .contents a .nav-label{display:inline;font-size:11px}body>main,body>main.main{margin-left:0}}
+@media print{html{scrollbar-gutter:auto}body aside.rail{display:none}body>main,body>main.main{margin:0}}
+
+/* Distinguish document numbers from section numbers. */
+body .rail .doc-nav a>span{font-family:inherit;font-style:normal;font-size:13px;font-weight:600;flex:0 0 18px;text-align:center}

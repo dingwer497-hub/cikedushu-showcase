@@ -1,0 +1,206 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>此刻读什么 · AI 使用说明</title>
+<meta name="description" content="以五个阶段回顾项目中的人机协作，通过三个真实决策说明我的判断、AI的工作，以及项目协作经验与个人反思。">
+<style>
+:root{--paper:var(--tone-f6f5ee, #f6f5ee);--card:var(--tone-fffef9, #fffef9);--ink:var(--tone-193e35, #193e35);--text:var(--tone-34423d, #34423d);--muted:var(--tone-68766c, #68766c);--line:var(--tone-d7dfd2, #d7dfd2);--pale:var(--tone-e8eee3, #e8eee3);--green:var(--tone-376953, #376953)}
+*{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:30px}body{margin:0;background:var(--paper);color:var(--text);font:15px/1.9 -apple-system,BlinkMacSystemFont,"PingFang SC","Microsoft YaHei",sans-serif}a{color:var(--green);text-underline-offset:4px}a:hover{color:var(--ink)}a:focus-visible,summary:focus-visible,[tabindex]:focus-visible{outline:3px solid var(--tone-ad8253, #ad8253);outline-offset:4px}strong{font-weight:650;color:var(--ink)}p{margin:0 0 15px}h1,h2,h3,h4{color:var(--ink)}h1{font:600 46px/1.4 "Songti SC",SimSun,serif;margin:10px 0 18px}h2{font:600 29px/1.5 "Songti SC",SimSun,serif;margin:0}h3{font-size:20px;line-height:1.65;margin:3px 0 15px}h4{font-size:15px;margin:0 0 8px}.main{max-width:1530px;padding:44px clamp(26px,5vw,76px) 60px}.hero{border-top:3px solid var(--ink);padding:30px 0 0}.eyebrow{font-size:11px;color:var(--green);letter-spacing:.12em;margin:0}.lede{font-size:17px;max-width:850px}.meta{display:flex;flex-wrap:wrap;gap:10px 22px;color:var(--muted);font-size:12px;margin:20px 0 26px}.hero-map{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));border:1px solid var(--line);border-radius:5px;overflow:hidden;background:var(--card)}.hero-map a{padding:18px 20px;text-decoration:none;font-weight:650;border-right:1px solid var(--line)}.hero-map a:last-child{border:0}.hero-map span{display:block;font:italic 23px/1.6 Georgia,serif;color:var(--tone-809779, #809779);margin-bottom:4px}.hero-map a:hover{background:var(--pale)}section{border-top:1px solid var(--line);margin-top:44px;padding-top:35px;scroll-margin-top:28px}.section-head{display:flex;align-items:baseline;gap:18px;margin-bottom:22px}.section-head>.no{flex:0 0 30px;font:italic 25px/1.7 Georgia,serif;color:var(--tone-81967b, #81967b)}.small,.source{font-size:12px;color:var(--muted)}.section-lead{max-width:860px}.role-note{font-size:12px;color:var(--muted);margin-top:15px}.swimlane{margin:25px 0 0;background:var(--card);border:1px solid var(--line);border-radius:5px;overflow:hidden}.swimlane figcaption{padding:14px 18px;font-size:14px;font-weight:650;color:var(--ink);border-bottom:1px solid var(--line);display:flex;align-items:baseline;justify-content:space-between;gap:15px}.swimlane figcaption span{font-size:11px;font-weight:400;color:var(--muted)}.swim-scroll{overflow-x:auto}.swim-table{width:100%;min-width:770px;border-collapse:collapse;table-layout:fixed;text-align:left;font-size:12px;line-height:1.8}.swim-table th,.swim-table td{padding:15px 13px;border-right:1px solid var(--line);border-bottom:1px solid var(--line);vertical-align:top}.swim-table tr>*:last-child{border-right:0}.swim-table thead{background:var(--tone-edf0e7, #edf0e7)}.swim-table thead th{font-size:13px;font-weight:650;color:var(--ink);position:relative}.swim-table thead th:not(:first-child):not(:last-child):after{content:"→";position:absolute;right:-8px;top:21px;z-index:1;color:var(--tone-7d9274, #7d9274);background:var(--tone-edf0e7, #edf0e7);padding:0 2px}.swim-table .lane-label{width:78px;font-size:13px;color:var(--ink);font-weight:650}.phase-index{display:block;font:italic 19px/1.3 Georgia,serif;color:var(--tone-809779, #809779);margin-bottom:8px}.swim-table strong{display:block;font-size:13px;margin-bottom:6px}.swim-table .mine{background:var(--tone-e7eedf, #e7eedf)}.swim-table .ai{background:var(--tone-f7f8f2, #f7f8f2)}.swim-table .outcome{background:var(--card);color:var(--muted);font-size:11px}.swim-table .outcome>*{border-bottom:0;padding-top:12px;padding-bottom:12px}.swim-table .outcome strong{font-size:12px}.swim-note{margin:0;padding:12px 18px;border-top:1px solid var(--line);font-size:12px;color:var(--muted)}.scroll-hint{display:none}.case-list{border-top:1px solid var(--line);margin-top:24px}.case{display:grid;grid-template-columns:42px minmax(0,1fr);gap:18px;padding:27px 0;border-bottom:1px solid var(--line)}.case-no{font:italic 25px/1.5 Georgia,serif;color:var(--tone-81967b, #81967b)}.case-kicker{font-size:11px;letter-spacing:.08em;color:var(--green);margin:0 0 4px}.case p{font-size:14px;margin-bottom:12px}.case .source{font-size:11px;color:var(--muted);margin:15px 0 0}.quote{margin:0 0 16px;padding:12px 17px;border-left:3px solid var(--tone-91a581, #91a581);background:var(--pale);font-size:15px;line-height:1.85;color:var(--ink)}.quote p{font-size:15px;margin:0}.quote cite{display:block;font-size:11px;color:var(--muted);font-style:normal;margin-top:6px}.case-result{color:var(--green)}.results{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:0;border:1px solid var(--line);border-radius:5px;background:var(--card);overflow:hidden;margin:22px 0 25px}.result{padding:19px 20px;border-right:1px solid var(--line)}.result:last-child{border:0}.result-label{font-size:11px;color:var(--muted);margin-bottom:7px}.result h3{font-size:18px;margin:0 0 8px}.result p{font-size:13px;margin:0}.result .metric{font:26px/1.4 Georgia,serif;color:var(--ink);margin-right:5px}.reflection-title{font-size:19px;margin:29px 0 8px}.reflection-intro{font-size:14px;color:var(--muted)}.reflections{margin-top:20px}.reflection{display:grid;grid-template-columns:205px minmax(0,1fr);gap:25px;border-top:1px solid var(--line);padding:22px 0}.reflection h4{font-size:16px;line-height:1.7;margin:0 0 9px}.risk{font-size:12px;color:var(--tone-806343, #806343);line-height:1.8;margin:0}.reflection-body p{font-size:14px;margin:0 0 11px}.reflection-body p:last-child{margin:0}.next-action{padding-left:12px;border-left:2px solid var(--tone-adbf9f, #adbf9f)}.evidence{border-top:1px solid var(--line);margin:6px 0 0}.evidence summary{cursor:pointer;font-size:12px;color:var(--muted);padding:14px 0}.evidence-body{padding:0 0 12px;font-size:12px;color:var(--muted)}.evidence-body p{margin-bottom:8px}.end{border-top:2px solid var(--ink);padding-top:20px;margin-top:42px;display:flex;gap:20px;justify-content:space-between;font-size:12px;color:var(--muted)}.end p{margin:0}.end a{margin-left:14px}
+@media(max-width:1100px){.main{padding-left:28px;padding-right:28px}.scroll-hint{display:inline}.swimlane figcaption{flex-wrap:wrap;gap:3px}.reflection{grid-template-columns:175px minmax(0,1fr);gap:18px}.results .result{padding:17px 15px}}
+@media(max-width:760px){body{font-size:14px}.main{padding:25px 20px 40px}h1{font-size:34px}h2{font-size:24px}h3{font-size:18px}.hero{padding-top:22px}.lede{font-size:15px}.hero-map a{padding:13px 11px;font-size:12px}.hero-map span{font-size:20px}.section-head{gap:10px}.section-head>.no{flex-basis:27px;font-size:23px}section{margin-top:32px;padding-top:28px}.case{grid-template-columns:27px minmax(0,1fr);gap:10px;padding:23px 0}.case-no{font-size:22px}.quote{padding:11px 13px}.results{grid-template-columns:1fr}.result{border-right:0;border-bottom:1px solid var(--line)}.reflection{grid-template-columns:1fr;gap:12px}.reflection h4{margin-bottom:3px}.end{display:block}.end a{display:inline-block;margin:10px 14px 0 0}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+
+/* Project stages: two lanes with concrete exchanges. */
+.journey-stages{margin-top:24px}.journey-stage{margin:0;padding:25px 0;border-top:1px solid var(--line)}.journey-stage:first-child{padding-top:0;border-top:0}.journey-stage figcaption{display:flex;align-items:baseline;gap:14px;margin-bottom:14px;color:var(--ink);font-size:18px;font-weight:650}.journey-stage figcaption .stage-number{font:italic 24px/1.5 Georgia,serif;color:var(--tone-81967b, #81967b)}.stage-question{font-size:13px;color:var(--muted);margin-bottom:14px}.exchange-head,.exchange-row{display:grid;grid-template-columns:1fr 1fr;gap:30px}.exchange-head{font-size:12px;font-weight:650;color:var(--green);margin-bottom:8px}.exchange-head span{padding-left:15px}.exchange-row{position:relative;margin-bottom:10px}.exchange-row:after{content:"→";position:absolute;left:calc(50% - 10px);top:25px;color:var(--tone-6e8b61, #6e8b61);font-size:19px}.exchange-row.reverse:after{content:"←"}.exchange-node{background:var(--tone-e7eedf, #e7eedf);border:1px solid var(--line);border-radius:4px;padding:13px 15px;min-width:0}.exchange-node.ai-node{background:var(--tone-f7f8f2, #f7f8f2)}.exchange-node strong{font-size:14px;display:block;margin-bottom:5px}.exchange-node p{font-size:13px;line-height:1.8;margin:0}.exchange-node .turn{font:italic 13px Georgia,serif;color:var(--tone-788e6d, #788e6d);margin-right:7px}.exchange-loop{font-size:11px;color:var(--muted);text-align:center;margin:2px 0 10px}.stage-result{font-size:12px;color:var(--muted);margin:11px 0 0;padding-left:12px;border-left:2px solid var(--tone-adbf9f, #adbf9f)}.stage-evidence{font-size:11px;color:var(--muted);margin:9px 0 0}.journey-stages+.small{margin-top:10px}
+@media(max-width:760px){.journey-stage figcaption{font-size:16px;gap:10px}.exchange-head,.exchange-row{gap:22px}.exchange-node{padding:10px}.exchange-node strong{font-size:13px}.exchange-node p{font-size:12px}.exchange-row:after{font-size:16px;left:calc(50% - 8px)}.exchange-head span{padding-left:10px}.journey-stage{padding:22px 0}}
+
+.joint-node{background:var(--tone-edf0e7, #edf0e7);border-left:3px solid var(--tone-91a581, #91a581)}.exchange-node .participant{font-size:11px;font-weight:400;color:var(--muted);margin-left:10px;white-space:nowrap}.exchange-transition{font-size:17px;line-height:1.3;color:var(--tone-81967b, #81967b);text-align:center;margin:7px 0}.joint-node p{max-width:850px}
+
+.exchange-node .exchange-points{margin:0;padding-left:17px;list-style:disc;font-size:13px;line-height:1.8}.exchange-node .exchange-points li{margin:0 0 5px;padding-left:1px}.exchange-node .exchange-points li:last-child{margin-bottom:0}.exchange-node .exchange-points li::marker{color:var(--tone-81967b, #81967b)}@media(max-width:760px){.exchange-node .exchange-points{font-size:12px;padding-left:15px}}
+
+.journey-overview{margin:24px 0 28px;border:1px solid var(--line);border-radius:5px;overflow:hidden;background:var(--card)}.journey-overview table{width:100%;border-collapse:collapse;text-align:left;font-size:13px;line-height:1.9}.journey-overview th,.journey-overview td{padding:14px 16px;border-bottom:1px solid var(--line);vertical-align:baseline}.journey-overview thead th{background:var(--tone-edf0e7, #edf0e7);color:var(--ink);font-size:12px;font-weight:650}.journey-overview tbody th{width:185px;font-weight:650}.journey-overview tbody th a{text-decoration:none}.journey-overview tbody th a:hover{text-decoration:underline}.journey-overview tbody th span{font-family:Georgia,serif;font-size:16px;font-style:italic;line-height:1;margin-right:6px}.journey-overview tbody tr:last-child>*{border-bottom:0}@media(max-width:760px){.journey-overview th,.journey-overview td{padding:11px 10px}.journey-overview table{font-size:12px}.journey-overview tbody th{width:115px}}
+
+/* Overview: distinguish participants and expose stage navigation. */
+.journey-overview .flow-person{color:var(--tone-28634e, #28634e)}
+.journey-overview .flow-ai{color:var(--tone-3d628b, #3d628b)}
+.journey-overview tbody th a{display:block;text-decoration:underline;text-decoration-color:var(--tone-9aae9e, #9aae9e);text-underline-offset:4px}
+.journey-overview tbody th a::after{content:" ↗";font-size:11px;font-family:inherit}
+.journey-overview tbody th a:focus-visible{outline:2px solid var(--green);outline-offset:4px;border-radius:2px}
+
+.diagnosis-flow{margin:20px 0 24px}
+.diagnosis-labels,.diagnosis-row{display:grid;grid-template-columns:minmax(0,1fr) 24px minmax(0,1fr);align-items:stretch}
+.diagnosis-labels{margin-bottom:8px;font-size:12px}
+.diagnosis-labels strong:first-child{color:var(--tone-28634e, #28634e)}
+.diagnosis-labels strong:last-child{grid-column:3;color:var(--tone-3d628b, #3d628b)}
+.diagnosis-node{padding:14px 16px;border:1px solid var(--line);border-radius:4px;font-size:13px;line-height:1.8}
+.diagnosis-node.person{background:var(--tone-e7eee2, #e7eee2)}
+.diagnosis-node.ai{background:var(--tone-edf2f6, #edf2f6)}
+.diagnosis-node.person>strong{color:var(--tone-28634e, #28634e)}
+.diagnosis-node.ai>strong{color:var(--tone-3d628b, #3d628b)}
+.diagnosis-node p{margin:8px 0 0}
+.diagnosis-node ul{padding-left:17px;margin:8px 0 0}
+.diagnosis-node li+li{margin-top:5px}
+.diagnosis-arrow{align-self:center;text-align:center;color:var(--tone-7b9174, #7b9174)}
+.diagnosis-return{text-align:center;color:var(--tone-7b9174, #7b9174);line-height:1;margin:9px 0}
+@media(max-width:600px){.diagnosis-labels{display:none}.diagnosis-row{grid-template-columns:1fr}.diagnosis-arrow{transform:rotate(90deg);margin:7px 0}.diagnosis-node.person>strong::before{content:"我 · "}.diagnosis-node.ai>strong::before{content:"AI · "}}
+</style>
+<link rel="stylesheet" href="document-sidebar.css">
+<link rel="stylesheet" href="document-subhead.css">
+<link rel="stylesheet" href="document-theme.css">
+<style>.showcase-return{display:block;margin:0 0 10px;font-size:12px;color:var(--muted);text-decoration:none}.showcase-return:hover{text-decoration:underline}</style>
+</head>
+<body>
+<aside class="rail" aria-label="文档目录">
+<div class="brand"><span class="brandmark" aria-hidden="true">读</span><span><strong>此刻读什么</strong></span></div>
+<p class="rail-title">开发说明 · 三份材料</p>
+<a class="showcase-return" href="index.html">← 产品介绍</a>
+<nav class="doc-nav" aria-label="文档导航"><a href="01_产品设计方案.html"><span>一</span>产品设计思路</a><a href="02_技术选型说明_决策版.html"><span>二</span>技术方案</a><a href="03_AI使用说明.html" class="active" aria-current="page"><span>三</span>AI 使用说明</a></nav>
+<nav class="contents" aria-label="本篇目录"><a href="#journey"><span>01</span><span class="nav-label">项目协作全过程</span></a><a href="#cases"><span>02</span><span class="nav-label">三个代表性决策</span></a><a href="#reflection"><span>03</span><span class="nav-label">协作经验与个人反思</span></a></nav>
+<div class="rail-bottom"><div>2026.09.10<br>产品版本 v1.2</div></div>
+</aside>
+<main class="main">
+<header class="hero">
+<p class="eyebrow">此刻读什么</p><h1>AI 使用说明</h1>
+<p class="lede">从需求收敛到上线迭代，我负责明确目标、作出取舍并通过试用核对结果；Codex 协助分析方案，承担了大量资料处理、编码、测试与部署工作。</p>
+<div class="meta"><span>AI 开发工具：Codex</span><span>协作模型：GPT-6 Astra</span><span>产品 v1.2 · 已部署</span><span>2026 年 9 月 10 日</span><a href="https://eo-test.cikedushu.cn" target="_blank" rel="noopener noreferrer">访问此刻读什么 ↗</a></div>
+<nav class="hero-map" aria-label="内容概览"><a href="#journey"><span>01</span>项目协作全过程</a><a href="#cases"><span>02</span>三个代表性决策</a><a href="#reflection"><span>03</span>协作经验与个人反思</a></nav>
+</header>
+
+<section id="journey">
+<header class="section-head"><span class="no">01</span><h2>项目协作全过程</h2></header>
+<p class="section-lead">项目按五个阶段梳理：<strong>我提出目标或问题，AI 给出方案与实现；我再根据体验和证据作出判断，推动下一轮调整。</strong>下方按实际协作往返呈现，阶段之间也存在交叉迭代。</p>
+<div class="journey-overview"><table aria-label="五个项目阶段的协作流程总览"><thead><tr><th scope="col">项目阶段</th><th scope="col">协作流程</th></tr></thead><tbody><tr><th scope="row"><a href="#journey-stage-01"><span>1.1</span> 需求与范围</a></th><td>共同梳理阅读任务 → <span class="flow-person">我确认范围与优先级</span> → <span class="flow-ai">AI 细化推荐闭环</span> → 共同确认实现基线。</td></tr><tr><th scope="row"><a href="#journey-stage-02"><span>1.2</span> 方案与首版</a></th><td><span class="flow-ai">AI 交出首版</span> → <span class="flow-person">我试用并指出预期</span> → <span class="flow-ai">AI 修正与核查</span> → <span class="flow-person">我决定接受或暂缓。</span></td></tr><tr><th scope="row"><a href="#journey-stage-03"><span>1.3</span> 部署尝试与验收</a></th><td>香港 ECS 部署遇到访问问题 → <span class="flow-ai">AI 验证替代托管方案</span> → <span class="flow-person">我按实际使用条件验收。</span></td></tr><tr><th scope="row"><a href="#journey-stage-04"><span>1.4</span> 试用与迭代</a></th><td><span class="flow-person">我提出改进</span> → <span class="flow-ai">AI 分析方案</span> → <span class="flow-person">我确认范围</span> → <span class="flow-ai">AI 实现</span> → <span class="flow-person">我再次试用</span> → <span class="flow-ai">AI 修正并回归。</span></td></tr><tr><th scope="row"><a href="#journey-stage-05"><span>1.5</span> 验证与运行核查</a></th><td><span class="flow-person">我提出补书方向</span> → <span class="flow-ai">AI 整理候选</span> → <span class="flow-person">我确认并补充规则</span> → <span class="flow-ai">AI 导入核验</span> → <span class="flow-person">我追问运行情况</span> → <span class="flow-ai">AI 查证与估算。</span></td></tr></tbody></table></div>
+<div class="journey-stages" aria-label="五阶段项目协作泳道图">
+<figure class="journey-stage" aria-labelledby="journey-stage-01">
+<figcaption id="journey-stage-01" class="doc-subhead"><span class="subhead-number">1.1</span><span class="subhead-title">需求与范围：先确定解决什么问题</span></figcaption>
+<div class="exchange-node joint-node"><strong><span class="turn">1</span>共同梳理阅读任务 <span class="participant">我与 AI</span></strong><ul class="exchange-points"><li>围绕用户此刻为什么要选书，梳理问题解决、快速入门、定向知识延伸和已读书延伸四类任务。</li><li>明确从当前阅读目标出发，身份和年龄只作背景。</li></ul></div>
+<p class="exchange-transition" aria-hidden="true">↓</p>
+<div class="exchange-head"><span>我 · 确认范围与优先级</span><span>AI · 细化推荐闭环</span></div>
+<div class="exchange-row">
+<div class="exchange-node"><strong><span class="turn">2</span>决定首期做什么、先做什么</strong><ul class="exchange-points"><li>聚焦有明确或半明确知识目标的成年读者，首期选择非虚构书。</li><li>暂缓娱乐小说、无方向探索和完整学习计划，优先首选质量与端到端闭环。</li></ul></div>
+<div class="exchange-node ai-node"><strong><span class="turn">3</span>将范围转为可实现的流程</strong><ul class="exchange-points"><li>按已确认需求细化：输入 → 理解与必要追问 → 真实书库检索 → 比较、解释与校验 → 反馈调整。</li><li>明确每一步需要处理的信息和主要异常。</li></ul></div>
+</div>
+<p class="exchange-transition" aria-hidden="true">↓</p>
+<div class="exchange-node joint-node"><strong><span class="turn">4</span>共同确认实现基线 <span class="participant">我与 AI</span></strong><ul class="exchange-points"><li>将一本首选、最多两本差异化备选，以及真实书目、有据推荐、可纠正反馈和诚实的失败提示确定为实现基线。</li><li>先完成核心闭环，再扩大书库覆盖和功能范围。</li></ul></div>
+<p class="stage-result"><strong>阶段成果：</strong>形成任务场景、首期边界、推荐闭环与实现优先级，为首版开发提供依据。</p>
+</figure>
+<figure class="journey-stage" aria-labelledby="journey-stage-02">
+<figcaption id="journey-stage-02" class="doc-subhead"><span class="subhead-number">1.2</span><span class="subhead-title">方案与首版：用体验检验规则</span></figcaption>
+<div class="exchange-head"><span>我 · 判断、确认与反馈</span><span>AI · 分析、实现与验证</span></div>
+<div class="exchange-row reverse"><div class="exchange-node"><strong><span class="turn">2</span>试用并明确行为预期 <span class="participant">我</span></strong><ul class="exchange-points"><li>要求备选已读只补一本，保留其他有效推荐。</li><li>追问只针对关键缺口，不为补齐资料反复询问。</li><li>对有争议的推荐，要求提供依据。</li></ul></div><div class="exchange-node ai-node"><strong><span class="turn">1</span>交出可运行的首版 <span class="participant">AI</span></strong><ul class="exchange-points"><li>完成小书库、推荐、多轮反馈与界面。</li><li>提供可操作的首版，让我检查输入、推荐和后续操作。</li></ul></div></div>
+<p class="exchange-transition" aria-hidden="true">↓</p>
+<div class="exchange-row reverse"><div class="exchange-node"><strong><span class="turn">4</span>依据结果决定是否继续修改 <span class="participant">我</span></strong><ul class="exchange-points"><li>经济学案例回查目录后，不凭单次争议认定缺陷。</li><li>心理学措辞过宽记录待办、暂缓处理，继续推进主要功能与部署。</li></ul></div><div class="exchange-node ai-node"><strong><span class="turn">3</span>修正规则并返回验证依据 <span class="participant">AI</span></strong><ul class="exchange-points"><li>调整局部替换与追问，检查已读排除、连续替换和历史保留。</li><li>回查目录与推荐理由，将行为错误和质量观察分别说明。</li></ul></div></div>
+<p class="stage-result"><strong>阶段成果：</strong>形成可运行首版与较明确的反馈规则；修复、接受和暂缓都有对应判断。</p>
+</figure>
+<figure class="journey-stage" aria-labelledby="journey-stage-03">
+<figcaption id="journey-stage-03" class="doc-subhead"><span class="subhead-number">1.3</span><span class="subhead-title">部署尝试与验收：以实际可用为准</span></figcaption>
+<div class="exchange-node joint-node"><strong><span class="turn">1</span>从首次部署中发现问题 <span class="participant">我与 AI</span></strong><ul class="exchange-points"><li>先尝试阿里云香港 ECS，应用部署后遇到大陆访问问题。</li><li>我参与网络检测与售后沟通，并与 AI 继续寻找低成本、可实际使用的部署路径。</li></ul></div>
+<p class="exchange-transition" aria-hidden="true">↓</p>
+<div class="exchange-head"><span>我 · 明确验收标准</span><span>AI · 验证替代方案</span></div>
+<div class="exchange-row">
+<div class="exchange-node"><strong><span class="turn">2</span>普通网络可访问，完整流程可用 <span class="participant">我</span></strong><ul class="exchange-points"><li>要求大陆用户无 VPN 可访问，手机 Wi-Fi、流量下能正常打开且无证书警告。</li><li>页面打开后，还要验证模型、数据库与完整选书流程。</li></ul></div>
+<div class="exchange-node ai-node"><strong><span class="turn">3</span>分层验证后接入完整应用 <span class="participant">AI</span></strong><ul class="exchange-points"><li>推进 EdgeOne、百炼与 Neon 接入，逐层验证连接。</li><li>检查推荐、已读反馈、刷新恢复和后台访问隔离。</li></ul></div>
+</div>
+<p class="exchange-transition" aria-hidden="true">↓</p>
+<div class="exchange-node joint-node"><strong><span class="turn">4</span>结合实测反馈与流程记录确认 <span class="participant">我与 AI</span></strong><ul class="exchange-points"><li>我反馈“我用手机wifi、流量测试了，都通过”，再授权完整接入。</li><li>AI 随后完成测试域名上的流程验证，保留检查记录。</li></ul></div>
+<p class="stage-result"><strong>阶段成果：</strong>从香港 ECS 的访问受阻，转向测试域名上的可用方案；验收结合我的网络实测与 AI 的流程验证，结论限于当时测试范围。</p>
+</figure>
+<figure class="journey-stage" aria-labelledby="journey-stage-04">
+<figcaption id="journey-stage-04" class="doc-subhead"><span class="subhead-number">1.4</span><span class="subhead-title">试用与迭代：从目标到实现，再修正偏差</span></figcaption>
+<div class="exchange-head"><span>我 · 判断、确认与反馈</span><span>AI · 分析、实现与验证</span></div>
+<div class="exchange-row"><div class="exchange-node"><strong><span class="turn">1</span>集中提出优化目标 <span class="participant">我</span></strong><ul class="exchange-points"><li>提出模板、追问选项、重点章节、评分、阅读入口、历史与后台统计等需求。</li><li>要求一起评估价值、难度和优先级。</li></ul></div><div class="exchange-node ai-node"><strong><span class="turn">2</span>分析可行性与实施范围 <span class="participant">AI</span></strong><ul class="exchange-points"><li>整理交互、数据补充和缺失状态，提供实现建议。</li><li>评估可落实的功能及相关资料、接口和测试工作。</li></ul></div></div>
+<p class="exchange-transition" aria-hidden="true">↓</p>
+<div class="exchange-row"><div class="exchange-node"><strong><span class="turn">3</span>确认本轮范围与资料底线 <span class="participant">我</span></strong><ul class="exchange-points"><li>授权八项优化做到可使用，可先不同步线上。</li><li>明确书籍资料不能虚构，缺评分、缺链接要有处理方式，虚构类暂缓。</li></ul></div><div class="exchange-node ai-node"><strong><span class="turn">4</span>交付可试用的实现 <span class="participant">AI</span></strong><ul class="exchange-points"><li>补页面、数据库和接口，落实模板、章节、资料入口、历史等功能。</li><li>检查资料约束、访问归属、恢复和事件去重。</li></ul></div></div>
+<p class="exchange-transition" aria-hidden="true">↓</p>
+<div class="exchange-row"><div class="exchange-node"><strong><span class="turn">5</span>用实际问题再次校正 <span class="participant">我</span></strong><ul class="exchange-points"><li>模板从三空减为一空。</li><li>章节不强排阅读顺序。</li><li>缺链接也要有反馈。</li><li>点名《理解漫画》仍跑偏时，要求先解释原因再修复。</li></ul></div><div class="exchange-node ai-node"><strong><span class="turn">6</span>修正行为并回放问题场景 <span class="participant">AI</span></strong><ul class="exchange-points"><li>落实交互与资料规则。</li><li>区分查看指定书籍、继续推荐和已读反馈，使用旧会话副本回放，检查修复及相关路径。</li></ul></div></div>
+<p class="stage-result"><strong>阶段成果：</strong>优化目标转为具体规则；实现经过再次试用与修正，不把首轮交付直接当作最终验收。</p>
+</figure>
+<figure class="journey-stage" aria-labelledby="journey-stage-05">
+<figcaption id="journey-stage-05" class="doc-subhead"><span class="subhead-number">1.5</span><span class="subhead-title">验证与运行核查：依据实际缺口继续判断</span></figcaption>
+<div class="exchange-head"><span>我 · 判断、确认与反馈</span><span>AI · 分析、实现与验证</span></div>
+<div class="exchange-row"><div class="exchange-node"><strong><span class="turn">1</span>从推荐缺口确定补书方向 <span class="participant">我</span></strong><ul class="exchange-points"><li>发现较新 LLM 书籍不足，要求兼顾“时效性和经典性”，先看书单。</li><li>随后补充偏实操的需求。</li></ul></div><div class="exchange-node ai-node"><strong><span class="turn">2</span>整理候选书目与资料 <span class="participant">AI</span></strong><ul class="exchange-points"><li>按方向整理候选书目和可用来源，供确认引入范围。</li><li>区分中文、英文及在线草稿等资料类型。</li></ul></div></div>
+<p class="exchange-transition" aria-hidden="true">↓</p>
+<div class="exchange-row"><div class="exchange-node"><strong><span class="turn">3</span>确认引入并补充例外规则 <span class="participant">我</span></strong><ul class="exchange-points"><li>批准引入后继续检查：要求补封面。</li><li>英文书或草稿缺豆瓣资料时，标题链接原资料网站，外文书不使用当当搜索入口。</li></ul></div><div class="exchange-node ai-node"><strong><span class="turn">4</span>导入并核验资料与展示 <span class="participant">AI</span></strong><ul class="exchange-points"><li>新增 12 本，书库增至 276 本。</li><li>核对来源、目录与向量，补封面和资料入口。</li><li>未核实评分留空，草稿与正式出版物分别标记。</li></ul></div></div>
+<p class="exchange-transition" aria-hidden="true">↓</p>
+<div class="exchange-row"><div class="exchange-node"><strong><span class="turn">5</span>核实运行与费用依据 <span class="participant">我</span></strong><ul class="exchange-points"><li>追问免费额度够不够，要求读取实际消耗并配合安全验证。</li><li>再问后台是否每次分析，要求分别估算用户端和后台费用。</li></ul></div><div class="exchange-node ai-node"><strong><span class="turn">6</span>查用量、查代码、拆预算 <span class="participant">AI</span></strong><ul class="exchange-points"><li>核对托管消耗和剩余额度。</li><li>检查后台开关、预算、待办顺序与重试条件。</li><li>拆分两条调用链的费用，说明实际情况与估算假设。</li></ul></div></div>
+<p class="stage-result"><strong>阶段成果：</strong>获得资料补充与后续投入的依据；已核实数据、费用估算和待验证能力分别判断。</p>
+</figure>
+</div>
+</section>
+
+<section id="cases">
+<header class="section-head"><span class="no">02</span><h2>三个代表性决策</h2></header>
+<p class="section-lead">三个事件分别体现需求范围、建议边界和试用纠错：我提出判断与约束，AI 协助将其落实为规则、实现和验证。</p>
+<div class="case-list">
+<article class="case" id="case-scope"><div class="doc-subhead"><span class="subhead-number">2.1</span><h3 class="subhead-title">把“推荐书籍”收敛为目标驱动的非虚构选书</h3></div><div class="case-content"><p class="case-kicker">需求分析 · 明确首期解决什么</p>
+<p><strong>范围确定过程：</strong>共同梳理阅读任务 → 我确认首期人群与需求边界 → AI 细化推荐流程 → 共同确认输出形式与实现优先级。</p>
+<p><strong>我的判断：</strong>我将首期范围确定为帮助有明确或半明确知识目标的成年读者，选择当前适合的一本非虚构书。围绕解决问题、快速入门、知识延伸和已读延伸展开，暂不覆盖娱乐小说、无方向探索或完整学习计划。</p>
+<p><strong>协作落实：</strong>我与 AI 梳理任务场景和范围，确认“一本首选、最多两本差异化备选”。AI 将需求理解、必要追问、真实书库检索与反馈调整接成同一流程；优先完成选书闭环，再扩大覆盖。</p>
+<p class="case-result"><strong>结果：</strong>范围与输出形式成为实现基线。这个方向仍是产品假设，尚不能用开发测试证明真实用户一定需要它。</p>
+</div></article>
+<article class="case" id="case-chapters"><div class="doc-subhead"><span class="subhead-number">2.2</span><h3 class="subhead-title">标注相关重点章节，避免越过依据安排阅读顺序</h3></div><div class="case-content"><p class="case-kicker">设计取舍 · 让建议不超过资料依据</p>
+<p><strong>背景：</strong>我提出标注重点章节，希望用户更直观地看出书中哪些内容与当前需求有关。AI 在方案中提出“建议优先阅读”的表述，将章节提示延伸成了阅读顺序建议。</p>
+<blockquote class="quote"><p>“你不应该做阅读顺序这种太具体的建议，毕竟每本书情况都不同”</p><cite>我在章节建议讨论中的反馈</cite></blockquote>
+<p><strong>我的判断：</strong>指出相关章节与判断哪些章节应该先读，是两种不同的判断。项目提供给模型的主要是简介和目录，并非全书正文，不足以可靠判断章节之间的知识依赖和叙述安排。我因此要求改为“建议重点阅读的章节”，只在有补充价值时出现，不把相关性提示写成阅读顺序。</p>
+<p><strong>协作落实：</strong>AI 将真实目录组织成候选，由模型选择与需求相关的章节标识，再由程序映射标题、核对来源；没有足够依据时可以不提供章节建议。</p>
+<p class="case-result"><strong>结果：</strong>保留章节对选书的辅助价值，将建议限定在现有资料能够支持的范围内；标题可追溯，不等于已经验证了最佳阅读路径。</p>
+</div></article>
+<article class="case" id="case-intent"><div class="doc-subhead"><span class="subhead-number">2.3</span><h3 class="subhead-title">从推荐跑偏，定位到“最新操作被旧需求覆盖”</h3></div><div class="case-content"><p class="case-kicker">试用纠错 · 用具体场景和预期行为帮助 AI 定位问题</p>
+<p><strong>出现了什么问题：</strong>在围绕动画、游戏设计入门的多轮选书中，我先后输入“理解漫画”和“我想看看理解漫画”，想查看这本指定的书。系统却仍按之前的主题推荐其他书，连续两次没有响应我的新要求。</p>
+<figure class="diagnosis-flow" aria-label="我推动问题定位、AI 排查与修复的协作过程">
+<div class="diagnosis-labels"><strong>我 · 提供线索与推动定位</strong><strong>AI · 排查与实现</strong></div>
+<div class="diagnosis-row">
+<div class="diagnosis-node person"><strong>1　指出失败场景与预期差异，要求解释原因</strong><ul><li><strong>指出具体失败场景：</strong>连续输入“理解漫画”“我想看看理解漫画”，系统却仍推荐其他书。</li><li><strong>明确预期与实际的差别：</strong>我已指定想看的书，结果却沿用了之前的动画、游戏设计需求。我指出这个偏差，要求 AI 先检查原因并解释。</li></ul></div>
+<span class="diagnosis-arrow" aria-hidden="true">→</span>
+<div class="diagnosis-node ai"><strong>排查问题 · 区分查看指定书与继续推荐</strong><p>围绕指定书名后的处理路径排查，聚焦新操作为何仍进入旧需求的推荐流程。</p></div>
+</div>
+<div class="diagnosis-return" aria-hidden="true">↓</div>
+<div class="diagnosis-row">
+<div class="diagnosis-node person"><strong>2　要求修复，推动落实</strong><p>在要求原因解释之后，我进一步要求修复，让系统响应查看指定书籍的操作。</p></div>
+<span class="diagnosis-arrow" aria-hidden="true">→</span>
+<div class="diagnosis-node ai"><strong>落实修复 · 调整规则并回放验证</strong><p>指定书直接匹配；类似书推荐、已读换书分别处理。用真实旧会话副本回放，并补充相关表达的回归检查。</p></div>
+</div>
+</figure>
+<p class="case-result"><strong>验证结果：</strong>AI 用真实旧会话副本回放，并补充相关表达的回归检查，共 24 项通过，其中包含 3 个旧会话回放。验证覆盖了此次问题及相关分支，尚不代表所有自然语言歧义都已解决。</p>
+</div></article>
+</div>
+</section>
+
+<section id="reflection">
+<header class="section-head"><span class="no">03</span><h2>协作经验与个人反思</h2></header>
+<p class="section-lead">这次协作让我逐步形成了三项做法：<strong>先分析取舍，把问题反馈具体，把验证放在投入之前。</strong>同时，我也需要更系统地检查变更影响，并提前明确验收标准。</p>
+<h3 class="doc-subhead"><span class="subhead-number">3.1</span> <span class="subhead-title">积累了哪些有效做法</span></h3>
+<div class="reflections">
+<article class="reflection"><div><h4>让 AI 先分析取舍，再决定做什么</h4></div><div class="reflection-body"><p>提出模板、追问选项、章节、评分和历史等改进后，我要求 AI 一起评估价值、难度和优先级，并追问数据库需要补充什么，再确认本轮实现范围。</p><p class="next-action"><strong>可复用的做法：</strong>提出目标后，先让 AI 列清收益、实现成本、依赖与可暂缓事项；由我决定做哪些、先做什么，再进入实现。</p></div></article>
+<article class="reflection"><div><h4>反馈问题时，讲清场景与差异</h4></div><div class="reflection-body"><p>《理解漫画》的案例中，我指出已从主题选书切换到查看指定书，系统却仍沿用旧需求。这比笼统评价推荐不准确，更能帮助 AI 缩小排查范围。</p><p class="next-action"><strong>可复用的做法：</strong>按“前置场景 → 我的操作 → 实际结果 → 预期行为”描述问题，要求先解释原因，再推进修复，并保留该场景用于回归。</p></div></article>
+<article class="reflection"><div><h4>先做最小验证，再扩大投入</h4></div><div class="reflection-body"><p>尝试替代部署方案时，我们分开验证普通网络访问、模型调用和数据库连接，通过后再接入完整应用，逐层判断是否值得继续投入。</p><p class="next-action"><strong>可复用的做法：</strong>让 AI 先验证最可能阻断方案的条件，我依据实际测试结果决定是否继续；新功能也先验证关键路径，再扩展范围。</p></div></article>
+</div>
+<h3 class="doc-subhead"><span class="subhead-number">3.2</span> <span class="subhead-title">我需要改进什么</span></h3>
+<p class="reflection-intro">这些做法还没有从项目一开始就稳定执行。以下三点直接关系到功能之间的一致性、核心行为和实际交付。</p>
+<div class="reflections">
+<article class="reflection"><div><h4>功能变更的连带影响检查不够系统</h4><p class="risk">风险：局部改进造成入口冲突，或遗漏特殊场景。</p></div><div class="reflection-body"><p><strong>我的不足：</strong>书名、封面和评分入口曾分次调整，试用后才发现跳转重复；外文书、缺少豆瓣资料等例外也在后续补充。我更多是在逐点修正，没有一开始就把相关入口和例外放在一起检查。</p><p class="next-action"><strong>下一次：</strong>每次调整功能前，让 AI 列出受影响的页面、数据和已有规则，由我确认整体行为；普通书、资料缺失和外文书等场景一起验收，避免修好一处又破坏另一处。</p></div></article>
+<article class="reflection"><div><h4>验收标准不够前置</h4><p class="risk">风险：流程可运行，却没有正确响应用户意图。</p></div><div class="reflection-body"><p><strong>我的不足：</strong>一些关键行为在连续试用后才补充，早期验收更关注首次推荐成功，对操作变化与旧上下文的处理覆盖不足。</p><p class="next-action"><strong>下一次：</strong>实现前写清典型输入、预期行为和禁止出现的结果；发布前固定回归指定书名、已读替换、改向、无匹配与失败恢复，核心错误未关闭就不判定为可交付。</p></div></article>
+<article class="reflection"><div><h4>关键依赖验证不够早</h4><p class="risk">风险：实现完成，目标用户仍无法访问。</p></div><div class="reflection-body"><p><strong>我的不足：</strong>香港 ECS 部署后才暴露大陆访问问题。虽然后续采用了分层验证，但我应更早把目标网络可达性作为方案成立的前提。</p><p class="next-action"><strong>下一次：</strong>投入完整部署前，先验证目标网络下的访问、模型调用和数据库连接；通过后再扩大投入，并保留切换与回退方案。</p></div></article>
+</div>
+</section>
+<footer class="end"><p>此刻读什么 · AI 使用说明<br>2026.09.10</p><div><a href="01_产品设计方案.html">产品设计思路</a><a href="02_技术选型说明_决策版.html">技术方案</a></div></footer>
+</main>
+<script>
+const sections=[...document.querySelectorAll('main>section')];
+const links=[...document.querySelectorAll('.contents a')];
+let queued=false;
+function updateNavigation(){
+ queued=false;let current=null;
+ for(const section of sections){if(section.getBoundingClientRect().top<=innerHeight*.3)current=section.id;}
+ links.forEach(link=>{const active=link.hash==='#'+current;link.classList.toggle('active',active);if(active)link.setAttribute('aria-current','location');else link.removeAttribute('aria-current');});
+}
+function scheduleUpdate(){if(!queued){queued=true;requestAnimationFrame(updateNavigation);}}
+addEventListener('scroll',scheduleUpdate,{passive:true});addEventListener('resize',scheduleUpdate);updateNavigation();
+// Keep previously shared chapter links usable after the three-section revision.
+const legacyAnchors={roles:'journey',online:'journey',verification:'reflection',limits:'reflection'};
+function resolveLegacyAnchor(){const target=legacyAnchors[location.hash.slice(1)];if(target){history.replaceState(null,'','#'+target);document.getElementById(target).scrollIntoView();}}
+addEventListener('hashchange',resolveLegacyAnchor);resolveLegacyAnchor();
+</script>
+</body></html>

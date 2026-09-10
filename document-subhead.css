@@ -1,0 +1,11 @@
+/* Match the numbered subsection headings in 产品设计思路 (.part-head). */
+body .doc-subhead{display:flex;align-items:flex-start;gap:20px;border-top:2px solid var(--ink);padding-top:21px;margin:42px 0 22px;color:var(--ink);font-family:inherit;font-size:25px;line-height:1.5;font-weight:650;scroll-margin-top:30px}
+body .doc-subhead>.subhead-number{flex:0 0 auto;font:italic 27px/1.5 Georgia,serif;color:var(--green);white-space:nowrap}
+body .doc-subhead>.subhead-title{min-width:0;margin:0;font:inherit;color:var(--ink)}
+body .journey-stage{padding:0;border-top:0}
+body .case{display:block;padding:0;border-bottom:0;margin:0}
+body .case-list{border-top:0}
+body .case .case-kicker{margin:0 0 14px}
+body .reflection-title{border-top:2px solid var(--ink);padding-top:21px;margin:42px 0 22px;font-size:25px;line-height:1.5;font-weight:650}
+@media(max-width:760px){body .doc-subhead{gap:13px;margin-top:32px;font-size:22px}body .doc-subhead>.subhead-number{font-size:25px}body .reflection-title{font-size:22px;margin-top:32px}}
+@media print{body .doc-subhead{font-size:20px;break-after:avoid}body .doc-subhead>.subhead-number{font-size:22px}body .reflection-title{font-size:20px;break-after:avoid}}
