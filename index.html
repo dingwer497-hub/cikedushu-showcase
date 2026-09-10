@@ -12,6 +12,27 @@
 @media(max-width:800px){.hero{gap:30px;grid-template-columns:1fr;padding:45px 0}.reading-note{max-width:100%}.doc-grid{gap:12px}.doc{padding:20px}.section-heading{align-items:start;flex-direction:column;gap:8px}}
 @media(max-width:600px){.shell{padding:0 22px}.top{padding:20px 0}.top nav{gap:16px;font-size:12px}.hero{gap:30px}h1{font-size:40px}.lead{font-size:15px}.principles,.doc-grid{grid-template-columns:1fr}.principle,.principle+.principle{padding:20px 0;border-left:0}.principle+.principle{border-top:1px solid var(--line)}.docs{padding:38px 0}.doc{min-height:0}.doc-index{margin-bottom:12px}.footer{flex-direction:column;gap:3px}.question{font-size:21px}.reading-note{padding:22px}.button{gap:16px}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.doc,.button{transition:none;transform:none!important}}
+
+/* First-screen document entry points and a compact reading example. */
+.hero{align-items:start;grid-template-columns:1.1fr 1fr;gap:48px;padding-bottom:42px}
+.hero .docs{padding:0;min-width:0}
+.hero .section-heading{display:block;margin-bottom:18px}
+.hero .section-heading h2{font-size:25px;line-height:1.55}
+.hero .section-heading p{font-size:12px;margin-top:6px}
+.hero .doc-grid{grid-template-columns:1fr;gap:10px}
+.hero .doc{display:grid;grid-template-columns:32px minmax(0,1fr);gap:2px 13px;min-height:0;padding:17px 20px}
+.hero .doc-index{grid-row:1 / 4;font-size:23px;margin:0}
+.hero .doc h3{font-size:17px;margin:0}
+.hero .doc p{font-size:12px;margin:3px 0 5px}
+.hero .doc-link{font-size:12px}
+.reading-example{display:flex;align-items:center;justify-content:space-between;gap:28px;padding:20px 24px;margin-bottom:30px;background:var(--pale);border-left:3px solid var(--green);border-radius:3px}
+.example-question{font:17px/1.8 var(--serif);color:var(--ink);margin-top:5px}
+.example-process{flex-shrink:0;color:var(--green);font-size:12px}
+.example-process span{margin:0 7px;color:var(--muted)}
+.example-process small{display:block;font-size:10px;color:var(--muted);margin-top:6px}
+.principles{margin-bottom:40px}
+@media(max-width:800px){.hero{grid-template-columns:1fr;gap:32px}.reading-example{align-items:start;flex-direction:column;gap:12px}}
+@media(max-width:600px){.hero{padding:36px 0 28px}.hero .section-heading h2{font-size:24px}.reading-example{padding:17px 18px}.example-question{font-size:16px}}
 </style>
 </head>
 <body><div class="shell">
@@ -19,13 +40,14 @@
 <main>
 <section class="hero" aria-labelledby="intro-title">
 <div><p class="eyebrow">产品介绍 · v1.2</p><h1 id="intro-title">从此刻的问题出发，<br>找到适合的一本书。</h1><p class="lead">一款对话式非虚构选书工具。说出你想解决的问题或想了解的领域，获得一本首选和最多两本备选，了解各自适合之处；不合适时，继续补充需求、调整推荐。</p><div class="actions"><a class="button primary" href="https://eo-test.cikedushu.cn/" target="_blank" rel="noopener noreferrer">进入用户端 <span aria-hidden="true">↗</span></a><a class="button" href="https://eo-test.cikedushu.cn/admin" target="_blank" rel="noopener noreferrer">进入管理者端 <span aria-hidden="true">↗</span></a></div><p class="meta">用户端可直接体验 · 管理者端需登录</p></div>
-<aside class="reading-note" aria-label="使用方式示例"><p class="note-label">从一个真实的阅读任务开始</p><p class="question">“第一次带团队，想学一对一沟通，希望有具体案例。”</p><div class="note-line"><span class="note-number">01</span><div><strong>说清需求</strong><p>从当前目标出发，必要时补充条件。</p></div></div><div class="note-line" style="margin-top:18px"><span class="note-number">02</span><div><strong>比较书籍</strong><p>结合资料，了解推荐理由与适合之处。</p></div></div><div class="note-line" style="margin-top:18px"><span class="note-number">03</span><div><strong>继续调整</strong><p>反馈已读、不合适或新想法，继续选书。</p></div></div><p class="note-foot">示例需求 · 实际推荐请进入用户端体验</p></aside>
-</section>
-<section class="principles" aria-label="产品特点"><article class="principle"><h3>围绕任务选书</h3><p>从解决问题、快速入门到知识延伸，关注这次阅读想达到什么目标。</p></article><article class="principle"><h3>让推荐有据可查</h3><p>基于真实书目与现有资料提供建议，展示来源、相关章节及必要的局限。</p></article><article class="principle"><h3>用反馈继续靠近需求</h3><p>保留对话与推荐记录，通过补充条件、已读反馈和评价继续调整。</p></article></section>
 <section class="docs" id="documents" aria-labelledby="documents-title"><div class="section-heading"><h2 id="documents-title">从三个角度，了解这个项目</h2><p>产品如何形成，系统如何实现，以及人与 AI 如何协作。</p></div><div class="doc-grid">
 <a class="doc" href="01_产品设计方案.html"><span class="doc-index">01</span><h3>产品设计思路</h3><p>需求与范围、核心体验，以及从首版到 v1.2 的产品迭代。</p><span class="doc-link">阅读产品文档 →</span></a>
 <a class="doc" href="02_技术选型说明_决策版.html"><span class="doc-index">02</span><h3>技术方案</h3><p>架构与选型、数据与 AI 流程、部署成本和测试计划。</p><span class="doc-link">阅读技术文档 →</span></a>
 <a class="doc" href="03_AI使用说明.html"><span class="doc-index">03</span><h3>AI 使用说明</h3><p>五个阶段的协作过程、代表性决策，以及协作经验与个人反思。</p><span class="doc-link">阅读协作记录 →</span></a>
 </div></section>
+</section>
+<aside class="reading-example" aria-label="使用方式示例"><div><p class="note-label">从一个阅读任务开始</p><p class="example-question">“第一次带团队，想学一对一沟通，希望有具体案例。”</p></div><div class="example-process"><p>说清需求 <span aria-hidden="true">→</span> 比较书籍 <span aria-hidden="true">→</span> 继续调整</p><small>示例需求 · 实际推荐请进入用户端体验</small></div></aside>
+<section class="principles" aria-label="产品特点"><article class="principle"><h3>围绕任务选书</h3><p>从解决问题、快速入门到知识延伸，关注这次阅读想达到什么目标。</p></article><article class="principle"><h3>让推荐有据可查</h3><p>基于真实书目与现有资料提供建议，展示来源、相关章节及必要的局限。</p></article><article class="principle"><h3>用反馈继续靠近需求</h3><p>保留对话与推荐记录，通过补充条件、已读反馈和评价继续调整。</p></article></section>
+
 </main><footer class="footer"><span>此刻读什么 · 产品与项目文档</span><span>产品 v1.2 · 支持系统深浅色模式</span></footer>
 </div></body></html>
