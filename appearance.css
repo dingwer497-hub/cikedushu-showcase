@@ -1,0 +1,8 @@
+/* Shared appearance control for the showcase and documents. */
+.appearance-control{display:flex;align-items:center;gap:8px;color:var(--muted);font:12px/1.5 -apple-system,BlinkMacSystemFont,"PingFang SC",sans-serif}
+.appearance-control select{font:inherit;color:var(--ink);background:var(--card);border:1px solid var(--line);border-radius:5px;padding:7px 26px 7px 9px;min-height:34px;max-width:145px;cursor:pointer}
+.appearance-control select:focus-visible{outline:2px solid var(--green);outline-offset:3px}
+.rail>.appearance-control{margin-top:18px;flex-shrink:0}
+.top-actions{display:flex;align-items:center;gap:22px;flex-wrap:wrap;justify-content:flex-end}
+@media(max-width:600px){.top{flex-wrap:wrap;gap:12px}.top-actions{width:100%;justify-content:space-between;gap:12px}.rail>.appearance-control{margin-top:12px}}
+@media print{.appearance-control{display:none!important}}

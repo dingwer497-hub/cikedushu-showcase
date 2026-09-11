@@ -1,7 +1,7 @@
 /* Shared automatic appearance. Light colors stay in their original declarations. */
 :root{color-scheme:light}
-@media screen and (prefers-color-scheme:dark){
-  :root{color-scheme:dark;
+@media screen{
+  :root[data-theme="dark"]{color-scheme:dark;
     --on-accent:#17261e;
     --tone-000000:#dce3de;
     --tone-173f37:#dcece3;
@@ -203,9 +203,9 @@
     --tone-fffef9:#342f23;
     --tone-ffffff:#1c2421;
   }
-  html{background:#171e1b}
-  body{background:#171e1b}
-  ::selection{background:#456650;color:#f2f7f3}
-  input,select,textarea,button{color-scheme:dark}
+  html[data-theme="dark"]{background:#171e1b}
+  html[data-theme="dark"] body{background:#171e1b}
+  html[data-theme="dark"] ::selection{background:#456650;color:#f2f7f3}
+  html[data-theme="dark"] :is(input,select,textarea,button){color-scheme:dark}
 }
 @media print{:root{color-scheme:light}}
