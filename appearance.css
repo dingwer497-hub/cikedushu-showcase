@@ -6,3 +6,9 @@
 .top-actions{display:flex;align-items:center;gap:22px;flex-wrap:wrap;justify-content:flex-end}
 @media(max-width:600px){.top{flex-wrap:wrap;gap:12px}.top-actions{width:100%;justify-content:space-between;gap:12px}.rail>.appearance-control{margin-top:12px}}
 @media print{.appearance-control{display:none!important}}
+
+/* Document appearance lives beside the version information at the rail foot. */
+body .rail .rail-bottom{display:flex;align-items:flex-end;justify-content:space-between;gap:8px}
+body .rail .rail-bottom .appearance-control{margin:0;flex-shrink:0;display:block;font-size:0}
+body .rail .rail-bottom .appearance-control select{font-size:11px;max-width:106px;padding:6px 3px;min-height:32px}
+@media(max-width:760px){body .rail .rail-bottom{display:flex;padding-top:14px;margin-top:0}body .rail .rail-bottom>div,body .rail .rail-bottom>p{display:none}body .rail .rail-bottom{justify-content:flex-end}}
