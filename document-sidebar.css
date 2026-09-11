@@ -27,3 +27,7 @@ body>main,body>main.main{margin-left:268px}
 
 /* Distinguish document numbers from section numbers. */
 body .rail .doc-nav a>span{font-family:inherit;font-style:normal;font-size:13px;font-weight:600;flex:0 0 18px;text-align:center}
+
+/* Shared transparent project logo in document navigation. */
+body .rail .document-logo{display:block;flex:0 0 43px;width:43px;height:48px;object-fit:contain;border:0;background:transparent}
+@media(max-width:760px){body .rail .document-logo{flex-basis:32px;width:32px;height:37px}}
